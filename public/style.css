@@ -1,0 +1,78 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#meeting-video-container{
+    display: flex;
+    justify-content: center;
+}
+
+video{
+    height: 300px;
+    width:400px;
+    object-fit: cover;
+}
+
+#meeting-container{
+    height: 88.5vh ;
+    display: flex;
+}
+
+#meeting-video-grid{
+    flex-grow: 1;
+    background-color:  #2F2F2F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88.5vh;
+}
+
+#meeting-chat{
+    display: flex;
+    flex-direction: column;
+    background-color: #F3F2F1;
+}
+
+#meeting-chat-window{
+    overflow-y: scroll;
+    scrollbar-color: #F3F2F1;
+    flex-grow: 1;
+    height: 70vh;
+    word-break: break-word;
+}
+
+#meeting-heading{
+    background-color: #2F2F2F;
+}
+
+#meeting-controls{
+    background-color: #201F1F;
+}
+
+#meeting-chat-heading{
+    padding-top: 1rem;
+    text-align: center;    
+}
+#meeting-video-grid{
+    padding: 0;
+}
+
+#meeting-chat-input{
+    padding: 1rem 0rem;
+}
+
+#meeting-chat-messages{
+    padding-left: 1px;
+    padding-right: 0.4rem;
+}
+
+#meeting-chat-messages li{
+    list-style: none;
+    background-color: #E4E4F0;
+    padding-left: 0.5rem;
+    border-radius: 4px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
