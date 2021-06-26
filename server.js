@@ -9,13 +9,16 @@ const peerServer = ExpressPeerServer(server,{
 })
 
 app.use(express.urlencoded({extended:true}));
-app.set("view engine","ejs");
-app.use(express.static("public"));
+
+app.set('view engine', 'ejs')
+app.set('views', "./frontend/views")
+
+app.use(express.static("frontend/public"));
 app.use("/peerjs",peerServer);
 
-app.use("/", require("./routes/routes"));
+app.use("/", require("./backend/routes/routes"));
 
-require("./sockets/index")(io);
+require("./backend/sockets/index")(io);
 
 const PORT = process.env.PORT || 8000;
 server.listen(PORT,()=>{
