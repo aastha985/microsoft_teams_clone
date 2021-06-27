@@ -72,9 +72,9 @@ $('html').keydown((event) => {
     }
 })
 
-socket.on("sendChatMessage",(chatMessage,username) => {
+socket.on("sendChatMessage",(chatMessage,username,time) => {
   //add message to the list
-    $('#meeting-chat-messages').append(`<li class="message-item"><b>${username}</b><br/>${chatMessage}</li>`);
+    $('#meeting-chat-messages').append(`<li><b>${username}</b><span class="meeting-message-time">${time}</span><br/>${chatMessage}</li>`);
 
    //scroll chat window
     var chatWindow = $('#meeting-chat-window');

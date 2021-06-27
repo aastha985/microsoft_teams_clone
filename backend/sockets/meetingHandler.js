@@ -1,3 +1,4 @@
+const moment = require('moment');
 const {
     userJoin,
     getCurrentUser,
@@ -17,7 +18,7 @@ module.exports = (io,socket) => {
 
         socket.on("chat",chatMessage=>{
             const user = getCurrentUser(socket.id);
-            io.to(meetingCode).emit("sendChatMessage",chatMessage,user.username);
+            io.to(meetingCode).emit("sendChatMessage",chatMessage,user.username,moment().format('h:mm A'));
         })
 
         socket.on('disconnect', () => {

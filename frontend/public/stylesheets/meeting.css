@@ -94,3 +94,8 @@ video{
     padding-bottom: 0.5rem;
     margin-bottom: 0.5rem;
 }
+
+.meeting-message-time{
+    margin-left: 0.7rem;
+    color: #5f6368;
+}
