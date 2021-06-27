@@ -34,7 +34,7 @@ navigator.mediaDevices.getUserMedia({
 
 //when a user connects emit user id and meeting code
 peer.on("open",id => {
-    socket.emit("joinMeeting",meetingCode,id);
+    socket.emit("joinMeeting",meetingCode,id,username);
 })
 
 //when new user joins the meeting
@@ -72,9 +72,9 @@ $('html').keydown((event) => {
     }
 })
 
-socket.on("sendChatMessage",chatMessage => {
+socket.on("sendChatMessage",(chatMessage,username) => {
   //add message to the list
-    $('ul').append(`<li class="message-item">${chatMessage}</li>`);
+    $('ul').append(`<li class="message-item"><b>${username}</b><br/>${chatMessage}</li>`);
 
    //scroll chat window
     var chatWindow = $('#meeting-chat-window');
