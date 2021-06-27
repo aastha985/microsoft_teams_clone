@@ -12,14 +12,15 @@
 
     <form action="/newMeeting" method="POST">
       <div class="input-group mb-3">
-        <input name="username" placeholder="Enter Name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        <input name="username" placeholder="Enter Name" type="text" class="form-control" required>
       </div>
       <button class="btn btn-primary">New Meeting</button>
     </form>
 
     <form action="/joinMeeting" method="POST">
     <div class="input-group mb-3">
-        <input name="meetingCode" placeholder="Enter Meeting Code" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
+        <input name="meetingCode" placeholder="Enter Meeting Code" type="text" class="form-control" required>
+        <input name="username" placeholder="Enter Name" type="text" class="form-control" required>
       </div>
       <button class="btn btn-primary">Join Meeting</button>      
     </form>

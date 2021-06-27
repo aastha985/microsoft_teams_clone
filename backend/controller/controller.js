@@ -9,7 +9,7 @@ exports.newMeeting = (req,res) => {
 }
 
 exports.joinMeeting = (req,res) => {
-    res.redirect("/"+req.body.meetingCode);
+    res.redirect(`/meet?${req.body.meetingCode}&username=${req.body.username}`);
 }
 
 exports.joinMeetingRoom =(req,res)=>{
