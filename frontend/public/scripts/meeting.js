@@ -74,7 +74,7 @@ $('html').keydown((event) => {
 
 socket.on("sendChatMessage",(chatMessage,username) => {
   //add message to the list
-    $('ul').append(`<li class="message-item"><b>${username}</b><br/>${chatMessage}</li>`);
+    $('#meeting-chat-messages').append(`<li class="message-item"><b>${username}</b><br/>${chatMessage}</li>`);
 
    //scroll chat window
     var chatWindow = $('#meeting-chat-window');
@@ -124,3 +124,15 @@ const audioControl = () => {
   socket.on("leaveMeeting", () =>{
     $("video")[1].remove();
   });
+
+  //==============participants ========================
+
+  socket.on("getParticipants",(meetingCode,users) => {
+    participants = $("#meeting-participants");
+    participants.empty();
+    const displayPicUrl = "https://www.donkey.bike/wp-content/uploads/2020/12/user-member-avatar-face-profile-icon-vector-22965342-300x300.jpg"
+      users.forEach((user) => {
+         const userDiv = $(`<li><img src=${displayPicUrl}>${user.username}</li>`);
+         participants.append(userDiv);
+      });
+  })

@@ -3,7 +3,6 @@ const users = [];
 const userJoin = (id, username, meetingCode) => {
   const user = { id, username, meetingCode };
   users.push(user);
-  return user;
 }
 
 const getCurrentUser = (id) =>  {

@@ -28,7 +28,7 @@ video{
     height: 88.5vh;
 }
 
-#meeting-chat{
+#meeting-chat-and-participants{
     display: flex;
     flex-direction: column;
     background-color: #F3F2F1;
@@ -38,7 +38,7 @@ video{
     overflow-y: scroll;
     scrollbar-color: #F3F2F1;
     flex-grow: 1;
-    height: 70vh;
+    height: 57.5vh;
     word-break: break-word;
 }
 
@@ -50,10 +50,28 @@ video{
     background-color: #201F1F;
 }
 
-#meeting-chat-heading{
+#meeting-participants-heading{
     padding-top: 1rem;
+    text-align: center;
+}
+
+#meeting-participants li{
+    list-style: none;
+    margin-bottom: 0.2rem;
+}
+
+#meeting-participants li img{
+    width: 2.5rem;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+#meeting-chat-heading{
     text-align: center;    
 }
+
 #meeting-video-grid{
     padding: 0;
 }

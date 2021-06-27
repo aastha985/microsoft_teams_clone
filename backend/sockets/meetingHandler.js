@@ -2,13 +2,17 @@ const {
     userJoin,
     getCurrentUser,
     userLeave,
+    getParticipants,
   } = require('../utils/users');
 
 module.exports = (io,socket) => {
 
     const joinMeeting = (meetingCode, userId,username) => {
-        const user = userJoin(socket.id,username,meetingCode);
         socket.join(meetingCode);
+        userJoin(socket.id,username,meetingCode);
+        io.to(meetingCode).emit("getParticipants",meetingCode,getParticipants(meetingCode));
+
+        
         socket.to(meetingCode).emit("joined",userId);
 
         socket.on("chat",chatMessage=>{
@@ -19,6 +23,7 @@ module.exports = (io,socket) => {
         socket.on('disconnect', () => {
             socket.to(meetingCode).emit('leaveMeeting',userId);
             userLeave(socket.id);
+            io.to(meetingCode).emit("getParticipants",meetingCode,getParticipants(meetingCode));
         })
     }
 
