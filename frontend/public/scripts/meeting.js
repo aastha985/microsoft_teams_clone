@@ -118,3 +118,9 @@ const audioControl = () => {
     $('#meeting-video-control')[0].innerHTML = button;
 
   }  
+
+  // ==============leave meeting ========================
+
+  socket.on("leaveMeeting", () =>{
+    $("video")[1].remove();
+  });

@@ -7,6 +7,10 @@ module.exports = (io,socket) => {
         socket.on("chat",chatMessage=>{
             io.to(meetingCode).emit("sendChatMessage",chatMessage);
         })
+
+        socket.on('disconnect', () => {
+            socket.to(meetingCode).emit('leaveMeeting', username)
+        })
     }
 
     socket.on("joinMeeting",joinMeeting);
