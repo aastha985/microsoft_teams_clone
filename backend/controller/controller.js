@@ -5,7 +5,7 @@ exports.home = (req,res) => {
 }
 
 exports.newMeeting = (req,res) => {
-    res.redirect(`/${uuidv4()}`);
+    res.redirect(`/meet?meetingCode=${uuidv4()}&username=${req.body.username}`);
 }
 
 exports.joinMeeting = (req,res) => {
