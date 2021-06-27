@@ -4,27 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Microsoft Teams</title>
+    <link rel="stylesheet" href="/stylesheets/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+
 </head>
 <body>
-    <h1>Microsoft Teams</h1> 
-
-    <form action="/newMeeting" method="POST">
-      <div class="input-group mb-3">
-        <input name="username" placeholder="Enter Name" type="text" class="form-control" required>
+  <!-- =============navbar================== -->
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="navbar-brand" href="#">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAclBMVEXz8/PzUyWBvAYFpvD/ugjz9fb19Pbz+fr49fv79vPy9fsAofD/tgDz29Xh6tLzRAB5uADzTRjzlH2u0XBwxPH70HHS5vP16tLz4+Dn7d3zPQCpz2bd6/NmwfH7zmf07d3zjnTzuKrI3qGh1fL43aIAnPDEciU8AAABeUlEQVR4nO3cSW7CUBBFURLiD4GYvjVtGva/xUxixxJfyqhMBudu4Omo5tXrSZKkVkV4zVQKLysso9vVxLSfRJe7YFlNY6uug5+t4WEW3eT+ikU5fYptvmiEy+fgCAkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCbsVVvPYpi3h7BHC3XUR3HstTB/L4A77zJ/dYhBes5WG0eUfCUuS9Gev4TVTaRRdkQEeT6vYTp81MX2tgztfMsTNrR/b+FQLR+u36LY54ThY2F+1hC+xERISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEnYrvI1ju/3+Lz0/5H9psYnu2ExdttHd+7qtCO/RQkmS/lffeJs9EU0/9ZkAAAAASUVORK5CYII=" width="30" height="30" class="d-inline-block align-top" alt="">
+        Microsoft Teams
       </div>
-      <button class="btn btn-primary">New Meeting</button>
-    </form>
+    </div>
+  </nav>
 
-    <form action="/joinMeeting" method="POST">
-    <div class="input-group mb-3">
-        <input name="meetingCode" placeholder="Enter Meeting Code" type="text" class="form-control" required>
-        <input name="username" placeholder="Enter Name" type="text" class="form-control" required>
+  <!-- =========container============== -->
+  <div id="home-vertically-center">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-6 d-flex align-items-center" >
+          <div>
+
+            <p id="home-heading" class="mt-5">Meet, chat, call, and collaborate in just one place</p>
+            <p id="home-tagline" class="mt-4">Instantly start a video chat for two people with the touch of a button</p>
+            
+            <!-- =========joining options =========== -->
+            <form action="/newMeeting" method="POST" class="mt-5">
+                  <div class="input-group mb-3">
+                  <input name="username" placeholder="Enter Name" type="text" class="form-control" required>
+                  <button class="btn btn-info">New Meeting</button>
+                </div>
+            </form>
+
+            <form action="/joinMeeting" method="POST">
+                <div class="input-group mb-3">
+                  <input name="meetingCode" placeholder="Enter Meeting Code" type="text" class="form-control" required>
+                  <input name="username" placeholder="Enter Name" type="text" class="form-control" required>
+                  <button class="btn btn-info">Join Meeting</button>      
+                </div>
+            </form>
+
+          </div>
+        </div>
+
+      <div class="col-md-6 home-image">
+        <img src="https://imgur.com/Tl1r13J.png" class="img-fluid" alt="Responsive image">
       </div>
-      <button class="btn btn-primary">Join Meeting</button>      
-    </form>
+
+      </div>
+    </div>
+  </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
-</body>
+      <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    </body>
 </html>
