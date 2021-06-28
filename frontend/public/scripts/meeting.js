@@ -136,3 +136,31 @@ const audioControl = () => {
          participants.append(userDiv);
       });
   })
+
+// ============= copy meeting code ===========================
+
+//enabling all tooltips
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
+//instantiate clipboard
+var clipboard = new ClipboardJS('#copy-to-clipboard');
+
+//set meeting code 
+document.querySelector("#copy-to-clipboard").setAttribute("data-clipboard-text",meetingCode);
+
+clipboard.on('success', function(e) {
+  let trigger_btn = e.trigger; 
+  
+  //changer text from copy to clipboard to copied
+  trigger_btn.setAttribute('data-bs-original-title', 'Copied!');
+
+  //get instance and show toolkit
+  let tooltip_btn = bootstrap.Tooltip.getInstance(trigger_btn);
+  tooltip_btn.show();
+
+  //reset text
+  trigger_btn.setAttribute('data-bs-original-title', 'Copy to clipboard');
+});

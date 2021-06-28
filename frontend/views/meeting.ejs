@@ -11,13 +11,14 @@
     <script src="https://kit.fontawesome.com/1d9b3c3ba8.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
     <script>
         const { username, meetingCode } = Qs.parse(location.search, {ignoreQueryPrefix: true,});
-        console.log(username+" "+meetingCode);
-    </script>
+        
+        </script>
 </head>
 <body>
-
+    
     <!-- ====================meeting heading=============================== -->
     <nav class="navbar navbar-dark" id="meeting-heading">
         <div class="container-fluid">
@@ -25,8 +26,8 @@
                 <span class="navbar-brand mb-0 h1">Microsoft Teams Meeting</span>
             </div>
         </div>
-      </nav>
-
+    </nav>
+    
     <!-- ===================== meeting controls=============================-->
     <nav class="navbar navbar-dark" id="meeting-controls">
         <div class="container-fluid">
@@ -37,23 +38,26 @@
                 <span id="meeting-video-control" onclick="videoControl()">
                     <button type="button" class="btn btn-secondary">Stop Video <i class="fas fa-video"></i></button>
                 </span>
+                <button type="button" id="copy-to-clipboard" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy To Clipboard">
+                    Copy Meeting Code <i class="fas fa-copy"></i>
+                </button>
             </div>
             <div id="leave mr-0">
                 <a href="/" class="btn btn-danger">Leave <i class="fas fa-phone"></i> </a>
             </div>
         </div>
     </nav>
-
+    
     <!-- ==================== meeting container============================== -->
     <div id="meeting-container">
         <div class = "container-fluid">
             <div class="row">
-
+                
                 <!-- =========video section========= -->
                 <div class="col-md-9" id="meeting-video-grid">
-                        <div id= "meeting-video-container"></div>
+                    <div id= "meeting-video-container"></div>
                 </div>
-
+                
                 <div class="col-md-3" id="meeting-chat-and-participants">
                     
                     <!-- ===========participants======= -->
@@ -72,12 +76,12 @@
                         <span class="input-group-text"><i class="far fa-paper-plane"></i></span>
                     </div>
                 </div>
-
-
+                
+                
             </div>
         </div>
     </div>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
     <script src="scripts/meeting.js"></script>
