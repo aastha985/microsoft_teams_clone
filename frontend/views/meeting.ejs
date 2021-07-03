@@ -41,12 +41,40 @@
                 <button type="button" id="copy-to-clipboard" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy To Clipboard">
                     Copy Meeting Code <i class="fas fa-copy"></i>
                 </button>
+                <button type="button"  class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#inviteModal">
+                    Invite <i class="fas fa-user-plus"></i>
+                </button>
             </div>
             <div id="leave mr-0">
                 <a href="/" class="btn btn-danger">Leave <i class="fas fa-phone"></i> </a>
             </div>
         </div>
     </nav>
+
+
+<!-- ================== Invite Modal ==========================================-->
+    <div class="modal fade" id="inviteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Invite Participants</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="invite-form">
+                    <div class="modal-body">
+                        <div class="input-group flex-nowrap">
+                            <input id="meeting-code" type="hidden" name="meetingCode">
+                            <input id="sender" type="hidden" name="sender">
+                            <input id="receiver-email" type="text" name="email" class="form-control" placeholder="Enter Email" aria-label="Email" aria-describedby="addon-wrapping" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="send-invite-btn">Send Invite</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     
     <!-- ==================== meeting container============================== -->
     <div id="meeting-container">
@@ -72,7 +100,7 @@
                         <ul id="meeting-chat-messages"></ul>
                     </div>
                     <div class="input-group" id="meeting-chat-input">
-                        <input type="text" class="form-control" placeholder="Send a message to everyone">
+                        <input id="message-input" type="text" class="form-control" placeholder="Send a message to everyone">
                         <span class="input-group-text"><i class="far fa-paper-plane"></i></span>
                     </div>
                 </div>
@@ -83,7 +111,7 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="scripts/meeting.js"></script>
 </body>
 </html>

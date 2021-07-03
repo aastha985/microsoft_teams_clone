@@ -62,7 +62,7 @@ const addVideoToGrid = (video,stream) => {
 
 //=============chat functionality================
 
-let chatInput = $('input');
+let chatInput = $("#message-input");
 
 $('html').keydown((event) => {
   //when enter key is pressed & input is not empty
@@ -164,3 +164,23 @@ clipboard.on('success', function(e) {
   //reset text
   trigger_btn.setAttribute('data-bs-original-title', 'Copy to clipboard');
 });
+
+
+// ==================invite participants=======================
+
+document.querySelector("#meeting-code").setAttribute("value",meetingCode);
+document.querySelector("#sender").setAttribute("value",username);
+
+$(function($){
+  $("#send-invite-btn").click(function(){
+    $.ajax({
+      type: "POST",
+      url: "inviteParticipant",
+      data: $("#invite-form").serialize(),
+      success: function(){
+        alert("Invite Has Been Sent");
+        $("#receiver-email").val('');
+      }
+    });
+  })
+})
