@@ -5,7 +5,8 @@ This project was built as a part of [Microsoft Engage 2021](https://microsoft.ac
 ## Table of Contents
 1. [About The Project](#about)
 2. [Additional Features Implemented](#additional-features)
-3. [Agile](#agile)
+3. [Demo Video](#demo)
+4. [Agile](#agile)
 5. [Built With](#built-with)
 6. [Network Protocols Used](#network-protocols)
 7. [Instructions To Run](#instructions-to-run)
@@ -23,6 +24,9 @@ A clone of the popular Microsoft Teams App that allows 2 people to connect with 
 4. Invite Participants via Email
 5. Chat
 6. Display Participants in Meeting
+
+### Demo Video
+[Click here to view the demo](https://youtu.be/-7_R5Ki5jms)
 
 <a name="agile"></a>
 ### Agile
